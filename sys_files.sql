@@ -32,3 +32,4 @@ create index index_del_flag
 create index index_tenant_id
     on sys_files (tenant_id);
 
+INSERT INTO sys_files (id, file_name, url, file_type, store_type, parent_id, tenant_id, file_size, iz_folder, iz_root_folder, iz_star, down_count, read_count, share_url, share_perms, enable_down, enable_updat, del_flag, create_by, create_time, update_by, update_time) VALUES ('1580814573568143361', '11.jpg', 'comment/11_1665730539114.jpg', 'image', 'temp', null, null, 10956, '0', '0', '0', null, null, null, null, null, null, '0', 'admin', '2022-10-14 14:55:39', null, null);

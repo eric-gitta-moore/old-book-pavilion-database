@@ -17,3 +17,4 @@ create index idx_table_form
 create index index_file_id
     on sys_form_file (file_id);
 
+INSERT INTO sys_form_file (id, table_name, table_data_id, file_id, file_type, create_by, create_time) VALUES ('1580814573635252225', 'sys_comment', '1580814573433925634', '1580814573568143361', 'image', 'admin', '2022-10-14 14:55:39');

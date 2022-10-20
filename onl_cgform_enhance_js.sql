@@ -74,6 +74,7 @@ INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_I
   }
  }', 'form', null, '4adec929a6594108bef5b35ee9966e9f');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('4569bc0e6126d2b8a0e0c69b9a47e8db', '', 'list', null, '56efb74326e74064b60933f6f8af30ea');
+INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('5e9ccc1e2b977bdd5a873a6bd6311290', '', 'list', null, '9ab817fd4c2e4e7ba6652c4fa46af389');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('6dd82d8eac166627302230a809233481', 'ces_order_goods_onlChange(){
     return {
         num(){
@@ -96,9 +97,54 @@ INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_I
         }
     }
 }', 'form', null, '56efb74326e74064b60933f6f8af30ea');
+INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('73ff4666e0cf5c2070263345e1e11835', 'one(){
+  console.log(''当前选中行的id'', this.selectedRowKeys);
+}
+
+beforeDelete(row){
+  return new Promise(resolve=>{
+    console.log(''删除数据之前看看数据'', row);
+    resolve();
+  });
+}', 'list', null, '553a4172fde446419cb602dc70f9ee67');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('85e7acd772c8ec322b97a1fd548007e0', '', 'form', null, '09fd28e4b7184c1a9668496a5c496450');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('8b76f282ddc81ce99a129e90fdd977ce', '', 'form', null, '86bf17839a904636b7ed96201b2fa6ea');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('90394fbc3d48978cc0937bc56f2d5370', '', 'list', null, 'deea5a8ec619460c9245ba85dbc59e80');
+INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('a0ca1d842f138ba2cda00bc44e95edd9', 'loaded(){
+  this.$nextTick(()=>{
+    let text = ''测试js增强设置默认值'';
+    if(this.isUpdate.value === true){
+      text = ''测试js增强修改表单值'';
+    }
+    this.setFieldsValue({
+      name: text
+    })
+  })
+}
+
+ onlChange(){
+   return {
+    name(){
+      let value = event.value
+      let values = {''dhwb'': ''我的名称是：''+ value }
+      this.triggleChangeValues(values)
+    }
+  }
+ }
+
+beforeSubmit(row){
+	return new Promise((resolve, reject)=>{
+    //此处模拟等待时间，可能需要发起请求
+    setTimeout(()=>{
+      if(row.name == ''test''){
+        // 当某个字段不满足要求的时候可以reject 
+        reject(''不能提交测试数据'');
+      }else{
+        resolve();
+      }
+    },3000)
+  })
+}', 'form', null, '553a4172fde446419cb602dc70f9ee67');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('ae9cf52fbe13cc718de2de6e1b3d6792', '', 'list', null, '18f064d1ef424c93ba7a16148851664f');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('beec235f0b2d633ff3a6c395affdf59d', '', 'list', null, '4adec929a6594108bef5b35ee9966e9f');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('c5ac9a2b2fd92ef68274f630b8aec78a', 'tjbpm(row){
@@ -113,5 +159,6 @@ bt1(){
    alert(''激活全部数据'')
 }', 'list', null, '05a3a30dada7411c9109306aa4117068');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('d7ddb7aa407f6deed75aac11f0a25f0e', '222', 'list', null, '09fd28e4b7184c1a9668496a5c496450');
+INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('de79fe5530e19ccb71b750900892a3a4', '', 'form', null, '9ab817fd4c2e4e7ba6652c4fa46af389');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('f6f8f230566d09d4b66338955ffb5691', '', 'form', null, '18f064d1ef424c93ba7a16148851664f');
 INSERT INTO onl_cgform_enhance_js (ID, CG_JS, CG_JS_TYPE, CONTENT, CGFORM_HEAD_ID) VALUES ('fd711738f58d5481ca0ce9bc3a415223', '', 'list', null, '86bf17839a904636b7ed96201b2fa6ea');

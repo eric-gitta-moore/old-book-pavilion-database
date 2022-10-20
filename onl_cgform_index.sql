@@ -18,3 +18,4 @@ create table onl_cgform_index
 create index idx_oci_cgform_head_id
     on onl_cgform_index (cgform_head_id);
 
+INSERT INTO onl_cgform_index (id, cgform_head_id, index_name, index_field, index_type, create_by, create_time, update_by, update_time, is_db_synch, del_flag) VALUES ('4731e321163d65e0e2cabf52c4a29937', '553a4172fde446419cb602dc70f9ee67', 'index_jycs', 'jycs', 'unique', 'admin', '2022-10-13 20:59:58', 'admin', '2022-10-14 09:31:05', 'Y', 0);
