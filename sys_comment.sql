@@ -18,3 +18,7 @@ create table sys_comment
 create index idx_table_data_id
     on sys_comment (table_name, table_data_id);
 
+INSERT INTO sys_comment (id, table_name, table_data_id, from_user_id, to_user_id, comment_id, comment_content, create_by, create_time, update_by, update_time) VALUES ('1580814554312093698', 'v3_hello', '1580529718871674882', 'e9ca23d68d884d4ebb19d07889727dae', '', '', '1212
+:open_mouth:', 'admin', '2022-10-14 14:55:35', null, null);
+INSERT INTO sys_comment (id, table_name, table_data_id, from_user_id, to_user_id, comment_id, comment_content, create_by, create_time, update_by, update_time) VALUES ('1580814573433925634', 'v3_hello', '1580529718871674882', 'e9ca23d68d884d4ebb19d07889727dae', '', '', '上传了附件', 'admin', '2022-10-14 14:55:39', null, null);
+INSERT INTO sys_comment (id, table_name, table_data_id, from_user_id, to_user_id, comment_id, comment_content, create_by, create_time, update_by, update_time) VALUES ('1580814621358043137', 'v3_hello', '1580529718871674882', 'e9ca23d68d884d4ebb19d07889727dae', '', '', '干啥啊', 'admin', '2022-10-14 14:55:51', null, null);

@@ -16,3 +16,4 @@ create table demo_field_def_val_main
     collate = utf8mb4_general_ci;
 
 INSERT INTO demo_field_def_val_main (id, code, name, sex, address, address_param, create_by, create_time, update_by, update_time, sys_org_code) VALUES ('1256548579457114114', 'q', 'q', '1', 'q', 'q', 'admin', '2020-05-02 19:38:21', 'admin', '2020-05-03 01:02:51', 'A01');
+INSERT INTO demo_field_def_val_main (id, code, name, sex, address, address_param, create_by, create_time, update_by, update_time, sys_org_code) VALUES ('1580543461659652098', '${order_num_rule_param}', 'admin', '2', '北京市 朝阳区', '北京市 昌平区', 'admin', '2022-10-13 20:58:21', 'admin', '2022-10-13 20:58:36', 'A01');

@@ -14,7 +14,9 @@ create table qrtz_simprop_triggers
     DEC_PROP_2    decimal(13, 4) null,
     BOOL_PROP_1   varchar(1)     null,
     BOOL_PROP_2   varchar(1)     null,
-    primary key (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP)
+    primary key (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP),
+    constraint qrtz_simprop_triggers_ibfk_1
+        foreign key (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP) references qrtz_triggers (SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP)
 )
     collate = utf8mb4_general_ci;
 
